@@ -13,16 +13,15 @@ namespace FulfilmentOrderApi.Tests
         public void SubmitReturnsMatchedColour()
         {
             var order = new Order("MyId");
-            order.AddOrderItem("1234","https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-black.png", 1);
+            order.AddOrderItem("1234", "https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-black.png", 1);
 
             var mappings = new ColourMatchMappings();
             var colourMapping = new ColourMapping
             {
-                Blue = 1,
-                Green = 2,
-                Red = 3,
-                Key = "Black",
-                Keywords = new string[] {"Black"}
+                Blue = 69,
+                Green = 69,
+                Red =69,
+                Key = "black"
             };
 
             mappings.Mappings = new ColourMapping[] {colourMapping};
@@ -36,14 +35,14 @@ namespace FulfilmentOrderApi.Tests
         public void SubmitDoesNotReturnMatchedColour()
         {
             var order = new Order("MyId");
-            order.AddOrderItem("1234", "https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-blue.png", 1);
+            order.AddOrderItem("1234", "https://pwintyimages.blob.core.windows.net/samples/stars/test-sample-grey.png", 1);
 
             var mappings = new ColourMatchMappings();
             var colourMapping = new ColourMapping
             {
-                Blue = 1,
-                Green = 2,
-                Red = 3,
+                Blue = 7,
+                Green = -3,
+                Red = 13,
                 Key = "Black",
                 Keywords = new string[] { "Black" }
             };
